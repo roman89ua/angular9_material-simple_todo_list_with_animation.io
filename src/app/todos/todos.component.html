@@ -1,0 +1,18 @@
+<div class="center">
+    <div class="center-item">
+        <mat-form-field>
+            <mat-label>Your new task</mat-label>
+            <input matInput type="text" name="taskInput" [(ngModel)]="value" (keyup.enter)="onEnter()">
+            <button mat-button *ngIf="value" matSuffix mat-icon aria-label="Clear" (click)="value=''">
+                <mat-icon>clear</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-list role="list">
+            <mat-list-item @fade *ngFor="let item of items" role="listitem">{{item}}
+                <button mat-button matSuffix mat-icon aria-label="Clear" (click)="clickToDelete(item)">
+                    <mat-icon>clear</mat-icon>
+                </button></mat-list-item>
+        </mat-list>
+    </div>
+
+</div>
